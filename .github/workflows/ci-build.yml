@@ -28,13 +28,13 @@ jobs:
         run: dotnet build src/ShoppingCart.Api/ShoppingCart.Api.csproj --configuration Release --no-restore
 
       - name: Restore dependencies for the test project
-        run: dotnet restore tests/ShoppingCart.Api.Tests/ShoppingCart.Api.Tests.csproj
+        run: dotnet restore test/ShoppingCart.Api.Tests/ShoppingCart.Api.Tests.csproj
 
       - name: Build the test project
-        run: dotnet build tests/ShoppingCart.Api.Tests/ShoppingCart.Api.Tests.csproj --configuration Release --no-restore
+        run: dotnet build test/ShoppingCart.Api.Tests/ShoppingCart.Api.Tests.csproj --configuration Release --no-restore
 
       - name: Run tests
-        run: dotnet test tests/ShoppingCart.Api.Tests/ShoppingCart.Api.Tests.csproj --configuration Release --no-build --collect:"XPlat Code Coverage"
+        run: dotnet test test/ShoppingCart.Api.Tests/ShoppingCart.Api.Tests.csproj --configuration Release --no-build --collect:"XPlat Code Coverage"
 
       - name: Upload test results
         uses: actions/upload-artifact@v3
