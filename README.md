@@ -1,22 +1,22 @@
-# Shopping Cart
+﻿# Shopping Cart
 
-[WIP - Work in Progress] ???
+[WIP - Work in Progress] 🛠️
 
 Full-stack application to manage a shopping basket, calculate the total price of grocery
 items, apply discounts, and display a detailed receipt.
 
 ## Tech stack
 
-- Backend: .NET6, C#, OpenAPI/Swagger ? 
-- Frontend: Angular 16 ?
-- Database: PostgreSQL ?
-- ORM: Entity Framework + Migrations ?
-- UnitTests: xUnit ? 
-- Integrations Tests: ?? [WIP]
-- Logging: Serilog ?? [WIP]
-- Monitoring: Grafana + Prometheus ?? [WIP]
-- CI: GitHub Actions ?
-- Containerization: Docker ?? [WIP]
+- Backend: .NET6, C#, OpenAPI/Swagger ✅ 
+- Frontend: Angular 16 ✅
+- Database: PostgreSQL ✅
+- ORM: Entity Framework + Migrations ✅
+- UnitTests: xUnit ✅ 
+- Integrations Tests: ⚠️ [WIP]
+- Logging: Serilog ⚠️ [WIP]
+- Monitoring: Grafana + Prometheus ⚠️ [WIP]
+- CI: GitHub Actions ✅
+- Containerization: Docker ⚠️ [WIP]
 
 ## How to Run
 
