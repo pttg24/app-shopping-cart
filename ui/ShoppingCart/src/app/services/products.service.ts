@@ -12,6 +12,6 @@ export class ProductsService {
   ) { }
 
   getAll(){
-    return this.http.get<Product[]>('https://localhost:44348/api/products')
+    return this.http.get<Product[]>('https://localhost:7070/api/products')
   }
 }
