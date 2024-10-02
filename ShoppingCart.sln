@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCart.Infrastructure
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCart.Api.Tests", "test\ShoppingCart.Api.Tests\ShoppingCart.Api.Tests.csproj", "{F78DFF2C-3157-44B0-AF3A-1AD9133F7682}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCart.Infrastructure.Tests", "test\ShoppingCart.Infrastructure.Tests\ShoppingCart.Infrastructure.Tests\ShoppingCart.Infrastructure.Tests.csproj", "{434C1E6B-70AE-488A-9890-8808F2A60490}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCart.Infrastructure.Tests", "test\ShoppingCart.Infrastructure.Tests\ShoppingCart.Infrastructure.Tests.csproj", "{434C1E6B-70AE-488A-9890-8808F2A60490}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{7D59581A-1F96-423F-A1BA-045E74F221C5}"
 EndProject
