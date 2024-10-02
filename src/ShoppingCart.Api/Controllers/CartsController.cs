@@ -33,11 +33,19 @@ public class CartsController : BaseController
     }
 
     [HttpGet]
-    public async Task<ActionResult> GetCart()
+    public async Task<ActionResult> GetCartByUserId()
     {
         var userId = HttpContext.User.GetUserId();
         if (userId == 0) userId = 1;
         var result = await _uow.CartRepository.GetCart(userId);
+        return Ok(result);
+    }
+
+    [HttpGet]
+    [Route("{id}")]
+    public async Task<ActionResult> GetCartById(int id)
+    {
+        var result = await _uow.CartRepository.GetCartById(id);
         return Ok(result);
     }
 

@@ -1,0 +1,20 @@
+
+<div class="container" >
+  <mat-card class="example-card" *ngFor="let item of products">
+    <mat-card-header>       
+      <mat-card-title>{{item.name}}</mat-card-title>          
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>
+           
+        {{item.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <span style="font-weight: 700; font-size: 1.5em;margin-right: 100px;">€{{item.amount}}</span>
+      <button mat-raised-button (click)="addProduct(item)">BUY</button>
+         
+    </mat-card-actions>       
+  </mat-card>
+</div>

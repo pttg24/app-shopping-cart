@@ -1,0 +1,13 @@
+.container{
+  width: 90%;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 10px;
+  margin: auto;
+}
+
+.example-card {
+  width: 90%;
+  height: 100%;
+}
