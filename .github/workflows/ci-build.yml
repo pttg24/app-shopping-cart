@@ -22,19 +22,25 @@ jobs:
           dotnet-version: '6.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore src/ShoppingCart.Api/ShoppingCart.Api.csproj
+        run: dotnet restore
 
       - name: Build
-        run: dotnet build src/ShoppingCart.Api/ShoppingCart.Api.csproj --configuration Release --no-restore
+        run: dotnet build --configuration Release --no-restore
 
       - name: Restore dependencies for the test project
-        run: dotnet restore test/ShoppingCart.Api.Tests/ShoppingCart.Api.Tests.csproj
+        run: |
+          dotnet restore test/ShoppingCart.Api.Tests/ShoppingCart.Api.Tests.csproj
+          dotnet restore test/ShoppingCart.Infrastructure.Tests/ShoppingCart.Infrastructure.Tests.csproj
 
       - name: Build the test project
-        run: dotnet build test/ShoppingCart.Api.Tests/ShoppingCart.Api.Tests.csproj --configuration Release --no-restore
+        run: |
+          dotnet build test/ShoppingCart.Api.Tests/ShoppingCart.Api.Tests.csproj --configuration Release --no-restore
+          dotnet build test/ShoppingCart.Infrastructure.Tests/ShoppingCart.Infrastructure.Tests.csproj --configuration Release --no-restore
 
       - name: Run tests
-        run: dotnet test test/ShoppingCart.Api.Tests/ShoppingCart.Api.Tests.csproj --configuration Release --no-build --collect:"XPlat Code Coverage"
+        run: |
+          dotnet test test/ShoppingCart.Api.Tests/ShoppingCart.Api.Tests.csproj --configuration Release --no-build --collect:"XPlat Code Coverage"
+          dotnet test test/ShoppingCart.Infrastructure.Tests/ShoppingCart.Infrastructure.Tests.csproj --configuration Release --no-build --collect:"XPlat Code Coverage"
 
       - name: Upload test results
         uses: actions/upload-artifact@v3
