@@ -1,0 +1,11 @@
+<h2>Cart</h2>
+
+<mat-list role="list">
+  <mat-list-item role="listitem" *ngFor="let item of products;let indice=index">
+    <span matListItemTitle>{{item.name | slice:0:20}}  <mat-icon aria-hidden="false" aria-label="delete" (click)="onClickDelete(indice)">delete</mat-icon> </span>
+    <span matListItemLine>{{item.amount | currency:"EUR"}}</span>
+        
+  </mat-list-item>  
+</mat-list>
+ 
+<app-total></app-total>

@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Shopping Cart App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="cart()">
+      <mat-icon [matBadge]="cartService.qtyProducts" matBadgeColor="warn" matBadgeOverlap="false">shopping_cart</mat-icon>
+    </button>
+  </mat-toolbar-row>

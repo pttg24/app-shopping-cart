@@ -66,6 +66,32 @@ public class CartRepository : BaseRepository, ICartRepository
         return result;
     }
 
+    public async Task<List<CartItemDto>> GetCartById(int id)
+    {
+        var cart = DbContext.Carts
+            .Where(c => c.Id == id)
+            .Select(c => c.Id).FirstOrDefault();
+
+        var items = await DbContext.CartItems
+            .Where(i => i.CartId == cart)
+            .ProjectTo<CartItemDto>(Mapper.ConfigurationProvider)
+            .AsNoTracking()
+            .ToListAsync();
+
+        var result = new List<CartItemDto>();
+        foreach (var item in items)
+        {
+            result.Add(new CartItemDto
+            {
+                CartId = item.CartId,
+                ProductId = item.ProductId,
+                Price = item.Price,
+                Count = item.Count
+            });
+        }
+        return result;
+    }
+
     public async Task<bool> RemoveFromCart(int userId, int cartItemId)
     {
         var cartId = DbContext.Carts
